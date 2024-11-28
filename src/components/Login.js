@@ -1,22 +1,22 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 import { useRef, useState } from "react";
 import Header from "./Header";
-import { checkValidData } from "../utilis/Validate";
+import { checkValidData } from "../utils/Validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { auth } from "../utilis/firebase";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addUsers } from "../utilis/userSlice";
+import { auth } from "../utils/firebase";
 
+import { useDispatch } from "react-redux";
+import { addUsers } from "../utils/userSlice";
+import { PHOTO_AVATAR } from "../utils/constants";
 const Login = () => {
   const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef();
@@ -42,7 +42,7 @@ const Login = () => {
 
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://cdn-icons-png.flaticon.com/128/4140/4140048.png",
+            photoURL: PHOTO_AVATAR,
           })
             .then(() => {
               // Profile updated!
@@ -55,7 +55,6 @@ const Login = () => {
                   photoURL: photoURL,
                 })
               );
-              navigate("/browse");
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -78,8 +77,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+
           // ...
         })
         .catch((error) => {
