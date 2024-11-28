@@ -1,14 +1,21 @@
+import { PLAY_ICON } from "../utils/constants";
 const VideoTitle = ({ title, overview }) => {
   return (
-    <div className="pt-40 pl-20">
-      <h1 className="text-3xl font-bold text-gray-600">{title}</h1>
+    <div className="w-screen aspect-video pt-[20%] pl-20 absolute text-white bg-gradient-to-r from-black">
+      <h1 className="text-3xl font-bold text-gray-100">{title}</h1>
       <p className="text-md w-1/3 my-5">{overview}</p>
       <div>
-        <button className="mr-2 bg-gray-600 text-yellow-50 rounded-lg py-2 px-10 font-bold bg-opacity-70">
-          ▶️Play
+        <img
+          alt="play"
+          src={PLAY_ICON}
+          className="w-4 h-4 absolute ml-5 mt-3"
+        />
+        <button className="mr-2 bg-white text-black rounded-lg py-2 px-10 font-bold hover:bg-opacity-85 ">
+          Play
         </button>
-        <button className="ml-3  bg-gray-600 text-yellow-50 rounded-lg py-2 px-10 font-bold bg-opacity-70">
-          ℹ️More Info
+
+        <button className="ml-3 bg-white text-black rounded-lg py-2 px-10 font-bold hover:bg-opacity-85">
+          More Info
         </button>
       </div>
     </div>

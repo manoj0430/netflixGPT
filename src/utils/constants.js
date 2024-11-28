@@ -3,6 +3,9 @@ export const LOGO =
 export const PHOTO_AVATAR =
   "https://cdn-icons-png.flaticon.com/128/4140/4140048.png";
 
+export const PLAY_ICON =
+  "https://cdn-icons-png.flaticon.com/128/4211/4211344.png";
+
 export const API_OPTIONS = {
   method: "GET",
   headers: {
