@@ -12,6 +12,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUsers } from "../utils/userSlice";
 import { PHOTO_AVATAR } from "../utils/constants";
+import { BG_URL } from "../utils/constants";
 const Login = () => {
   const dispatch = useDispatch();
   const [isSignIn, setIsSignIn] = useState(true);
@@ -93,7 +94,7 @@ const Login = () => {
       <Header />
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/dadb130d-463b-4e5b-b335-038ed912059e/web_tall_panel/IN-en-20241118-TRIFECTA-perspective_19bdd42f-315f-4636-b5fb-3cabd8eb471c_large.jpg"
+          src={BG_URL}
           alt="Netflix Body Image"
         />
       </div>
