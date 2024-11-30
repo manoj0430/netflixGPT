@@ -25,7 +25,4 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "telugu", name: "Telugu" },
 ];
 
-export const OPENAI_KEY =
-  "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";
-
 export const GROQ_KEY = process.env.REACT_APP_GROQ_KEY;
